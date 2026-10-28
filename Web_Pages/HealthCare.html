@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Portal - Sign In</title>
+    <link rel="stylesheet" href="../Style css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .flash-msg {
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .flash-msg.error   { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+        .flash-msg.success { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+        #notice {
+            font-size: 12px;
+            color: #1a56db;
+            background: #eff4ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo-icon"><img src="../Images/icon.webp" alt="HealthCare LOGO"></div>
+            <h1>HealthCare Portal</h1>
+            <p>Secure medical appointment management</p>
+        </header>
+
+        <main class="login-card">
+
+            <div id="flashMsg" style="display:none" class="flash-msg"></div>
+
+            <ul class="role-list">
+                <li class="role-item active" data-role="patient">Patient</li>
+                <li class="role-item" data-role="doctor">Doctor</li>
+                <li class="role-item" data-role="admin">Admin</li>
+            </ul>
+
+            <form action="../Process/login_process.php" method="POST">
+                <div class="input-group">
+                    <label>Email / Phone</label>
+                    <input type="text" name="login" placeholder="Enter email or phone number" required
+                        pattern="(^[^\s@]+@[^\s@]+\.[^\s@]+$)|(^[0-9]{8,15}$)"
+                        title="Enter a valid email or phone number">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <p id="notice" style="display:none">Two-factor authentication will be required after login.</p>
+                <button type="submit" class="sign-in-btn">Sign In</button>
+            </form>
+
+            <div class="switch">
+                Don't have an account? <a href="../Web_Pages/register.html">Register</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            This is a demo application. No real medical data is stored.
+        </footer>
+    </div>
+
+    <script>
+        // Show flash message from URL params
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const msg  = params.get('message');
+            const type = params.get('type') || 'error';
+            if (msg) {
+                const el = document.getElementById('flashMsg');
+                el.textContent = decodeURIComponent(msg);
+                el.className   = 'flash-msg ' + type;
+                el.style.display = 'block';
+            }
+        })();
+
+        // Role tabs
+        const items = document.querySelectorAll(".role-item");
+        items.forEach(item => {
+            item.addEventListener("click", () => {
+                items.forEach(i => i.classList.remove("active"));
+                item.classList.add("active");
+                const role   = item.dataset.role;
+                const notice = document.getElementById("notice");
+                notice.style.display = (role === "doctor") ? "block" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
