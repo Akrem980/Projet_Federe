@@ -164,21 +164,6 @@ http://localhost/healthcare-portal/Web_Pages/HealthCare.html
 
 ---
 
-## 📸 Screenshots
-
-| Page | Description |
-|------|-------------|
-| ![Landing Page](screenshots/landing.png) | Landing & Login page |
-| ![Register](screenshots/register.png) | Registration with role selection |
-| ![Patient Dashboard](screenshots/patient_dashboard.png) | Patient appointment overview |
-| ![Find Doctor](screenshots/find_doctor.png) | Doctor search with filters |
-| ![Booking Modal](screenshots/booking_modal.png) | Time slot selection modal |
-| ![Doctor Dashboard](screenshots/doctor_dashboard.png) | Doctor appointment management |
-
-> *Replace placeholder paths with actual screenshots before submission.*
-
----
-
 ## 🔐 Default Roles & Access
 
 | Role | Access |
@@ -205,20 +190,20 @@ This project was developed using the **Scrum Agile** framework across **3 Sprint
 
 | Name | Role |
 |------|------|
-| **[Author 1]** | Full Stack Developer |
-| **[Author 2]** | Backend / Database |
-| **[Author 3]** | Frontend / UI Design |
-| **[Author 4]** | Scrum Master / Product Owner |
+| Youssef Nefzi | Backend / Database |
+| Nour HR/Nourane Bouzidi | Frontend / UI Design |
+| Akrem Barhoumi | Scrum Master / Product Owner |
 
 **Academic Program:** LSI2 — Génie Logiciel  
-**University:** [Your University Name]  
+**University:** Institut Supérieur d’Informatique du Kef | ISI Kef 
 **Year:** 2025–2026
 
 ---
 
 ## 📄 License
+GLSI : Licence en Génie Logiciel et Système d'Information :
 
-This project is developed for academic purposes as part of a final year university project.
+This project is developed for academic purposes as part of the university's curriculum.
 
 ---
 
